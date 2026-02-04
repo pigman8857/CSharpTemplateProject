@@ -1,7 +1,7 @@
-using JoiDelivery.Models;
+using JoiDelivery.Domain.Entities;
 using JoiDelivery.Seed;
 
-namespace JoiDelivery.Services;
+namespace JoiDelivery.Application.Services;
 
 public class UserService
 {

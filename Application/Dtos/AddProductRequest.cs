@@ -1,4 +1,4 @@
-namespace JoiDelivery.Dtos;
+namespace JoiDelivery.Application.Dtos;
 
 public class AddProductRequest
 {

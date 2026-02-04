@@ -1,8 +1,8 @@
-using JoiDelivery.Dtos;
-using JoiDelivery.Models;
+using JoiDelivery.Application.Dtos;
+using JoiDelivery.Domain.Entities;
 using JoiDelivery.Seed;
 
-namespace JoiDelivery.Services;
+namespace JoiDelivery.Application.Services;
 
 public class CartService(ProductService productService, UserService userService)
 {
@@ -20,10 +20,10 @@ public class CartService(ProductService productService, UserService userService)
 
         return new CartProductInfo(cart, product, product.SellingPrice);
     }
-    
-    public Cart? GetCartForUser(string userId) => 
+
+    public Cart? GetCartForUser(string userId) =>
         _userCarts.GetValueOrDefault(userId);
-    
+
     private Cart? FetchCartForUser(User user) =>
         _userCarts.GetValueOrDefault(user.Id);
 }

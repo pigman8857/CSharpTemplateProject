@@ -1,4 +1,4 @@
-namespace JoiDelivery.Models;
+namespace JoiDelivery.Domain.Entities;
 
 public class User
 {
