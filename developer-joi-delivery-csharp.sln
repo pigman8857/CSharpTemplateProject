@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoiDelivery", "JoiDelivery.csproj", "{B11C74DB-F3AA-ABD4-71B1-2E1C3C257E12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Tests", "MyProject.Tests\MyProject.Tests.csproj", "{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{B11C74DB-F3AA-ABD4-71B1-2E1C3C257E12}.Release|x64.Build.0 = Release|Any CPU
 		{B11C74DB-F3AA-ABD4-71B1-2E1C3C257E12}.Release|x86.ActiveCfg = Release|Any CPU
 		{B11C74DB-F3AA-ABD4-71B1-2E1C3C257E12}.Release|x86.Build.0 = Release|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Debug|x64.Build.0 = Debug|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Debug|x86.Build.0 = Debug|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Release|x64.ActiveCfg = Release|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Release|x64.Build.0 = Release|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Release|x86.ActiveCfg = Release|Any CPU
+		{7EAD7A7B-FC23-457D-80B9-114BB4D2D3FB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

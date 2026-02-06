@@ -17,6 +17,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Compile Remove="MyProject.Tests\**" />
+      <EmbeddedResource Remove="MyProject.Tests\**" />
+      <None Remove="MyProject.Tests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Folder Include="migrations/" />
     </ItemGroup>
 
