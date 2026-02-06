@@ -3,9 +3,9 @@ using JoiDelivery.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace JoiDelivery.Infrastructure.EntityTypeConfig;
+namespace JoiDelivery.Infrastructure.EntityTypeConfigs;
 
-public class CartEntityTypeConfiguration : IEntityTypeConfiguration<Cart>
+public class CartConfiguration : IEntityTypeConfiguration<Cart>
 {
        public void Configure(EntityTypeBuilder<Cart> builder)
        {
@@ -24,10 +24,13 @@ public class CartEntityTypeConfiguration : IEntityTypeConfiguration<Cart>
                      .WithOne()
                      .HasForeignKey("CartId"); // Assumes GroceryProduct has a CartId
 
-              // 4. One-to-One or Many-to-One with User
-              // Usually, a Cart belongs to one User
+              // 4. One-to-One with User
               builder.HasOne(c => c.User)
-                     .WithMany()
-                     .HasForeignKey("UserId");
+                     .WithOne(u => u.Cart)
+                     // This line is the fix! It tells EF that 'Cart' is the one 
+                     // that carries the 'UserId' shadow column.
+                     .HasForeignKey<Cart>("UserId")
+                     .IsRequired(false)
+                     .OnDelete(DeleteBehavior.Cascade);
        }
 }
