@@ -18,6 +18,12 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "JoiDelivery.Api": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "JOI_CONNECTION_STRING": "Data Source=joiDelivery.db"
+      }
     }
   }
 }

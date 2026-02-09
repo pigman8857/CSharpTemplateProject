@@ -23,8 +23,9 @@ public class JoiDbContext : DbContext, IJoiDbContext
 
   protected override void OnConfiguring(DbContextOptionsBuilder options)
   {
-    Console.WriteLine(">>>>>>>>>>>>>>> JoiDbContext.OnConfiguring()");
-    options.UseSqlite("Data Source=joiDelivery.db");
+    // Console.WriteLine(">>>>>>>>>>>>>>> JoiDbContext.OnConfiguring()");
+    // options.UseSqlite("Data Source=joiDelivery.db");
+
   }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -20,6 +20,8 @@ public class CartController(CartService cartService) : ControllerBase
     [HttpGet("view")]
     public ActionResult<string> ViewCart([FromQuery(Name = "userId")] string userId)
     {
+        cartService.GetSettings();
+
         var cart = cartService.GetCartForUser(userId);
 
         return Ok(cart);
