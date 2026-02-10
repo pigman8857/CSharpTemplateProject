@@ -1,6 +1,9 @@
 using JoiDelivery.Application.Services;
 using JoiDelivery.Application.Settings;
+using JoiDelivery.Domain.Interfaces;
 using JoiDelivery.Infrastructure;
+using JoiDelivery.Infrastructure.Repositories;
+using JoiDelivery.Presentation.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,13 +29,16 @@ builder.Services.AddDbContext<JoiDbContext>((DbContextOptionsBuilder options) =>
     }
 });
 
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 ///Set up configuration objects and use in DI
 builder.Services.Configure<ServerSettings>(
     builder.Configuration.GetSection("ServerSettings"));
 
-builder.Services.AddSingleton<UserService>();
-builder.Services.AddSingleton<CartService>();
-builder.Services.AddSingleton<ProductService>();
+builder.Services.AddScoped<IUserService, UserService>();
+// builder.Services.AddSingleton<IUserService, UserService>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())

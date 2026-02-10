@@ -23,8 +23,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Application/Services/Interfaces/" />
       <Folder Include="Application/Settings/" />
+      <Folder Include="Infrastructure/Repositories/" />
       <Folder Include="migrations/" />
     </ItemGroup>
 

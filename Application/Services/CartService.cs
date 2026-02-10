@@ -1,3 +1,4 @@
+using JoiDelivery.Application.Common.Interfaces;
 using JoiDelivery.Application.Dtos;
 using JoiDelivery.Application.Settings;
 using JoiDelivery.Domain.Entities;
@@ -9,10 +10,10 @@ namespace JoiDelivery.Application.Services;
 public class CartService : ICartService
 {
     private readonly ServerSettings _options;
-    private readonly ProductService _productService;
+    private readonly IProductService _productService;
+    private readonly IUserService _userService;
 
-    private readonly UserService _userService;
-    public CartService(ProductService productService, UserService userService, IOptions<ServerSettings> options)
+    public CartService(IProductService productService, IUserService userService, IOptions<ServerSettings> options)
     {
         _options = options.Value;
         _productService = productService;
