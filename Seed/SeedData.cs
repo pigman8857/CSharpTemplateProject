@@ -1,4 +1,4 @@
-using JoiDelivery.Models;
+using JoiDelivery.Domain.Entities;
 
 namespace JoiDelivery.Seed;
 

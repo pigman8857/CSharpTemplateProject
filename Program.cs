@@ -1,10 +1,13 @@
-using JoiDelivery.Services;
+using JoiDelivery.Application.Services;
+using JoiDelivery.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<JoiDbContext>();
 
 builder.Services.AddSingleton<UserService>();
 builder.Services.AddSingleton<CartService>();
@@ -15,7 +18,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    
+
     app.MapGet("/", context =>
     {
         context.Response.Redirect("/swagger");
@@ -25,5 +28,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
+// app.MapControllerRoute(
+//     name: "Cart",
+//     pattern: "{controller=Cart}/{action=Index}/{id?}");
 
 app.Run();

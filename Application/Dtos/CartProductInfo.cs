@@ -1,6 +1,6 @@
-using JoiDelivery.Models;
+using JoiDelivery.Domain.Entities;
 
-namespace JoiDelivery.Dtos;
+namespace JoiDelivery.Application.Dtos;
 
 public class CartProductInfo(Cart cart, Product product, float sellingPrice)
 {

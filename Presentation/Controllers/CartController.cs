@@ -1,9 +1,9 @@
-using JoiDelivery.Dtos;
-using JoiDelivery.Models;
-using JoiDelivery.Services;
+using JoiDelivery.Application.Dtos;
+using JoiDelivery.Domain.Entities;
+using JoiDelivery.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JoiDelivery.Controllers;
+namespace JoiDelivery.Presentation.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -13,15 +13,15 @@ public class CartController(CartService cartService) : ControllerBase
     public ActionResult<CartProductInfo> AddProductToCart([FromBody] AddProductRequest addProductRequest)
     {
         var result = cartService.AddProductToCartForUser(addProductRequest);
-        
+
         return Ok(result);
     }
 
     [HttpGet("view")]
-    public ActionResult<Cart> ViewCart([FromQuery(Name = "userId")] string userId)
+    public ActionResult<string> ViewCart([FromQuery(Name = "userId")] string userId)
     {
         var cart = cartService.GetCartForUser(userId);
-        
+
         return Ok(cart);
     }
 }

@@ -1,6 +1,7 @@
-@JoiDelivery_HostAddress = http://localhost:5198
+# @JoiDelivery_HostAddress = http://localhost:5198
+@JoiDelivery_HostAddress = http://localhost:8080
 
-GET {{JoiDelivery_HostAddress}}/weatherforecast/
+GET {{JoiDelivery_HostAddress}}/Cart/view?userId=user101
 Accept: application/json
 
 ###
